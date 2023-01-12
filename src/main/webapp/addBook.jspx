@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : addBook
+    Created on : Jan 12, 2023, 3:10:03 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/Admin.jsp"/>
+
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-md-4 mx-auto card p-3 bg-light">
+                        <div class="d-flex justify-content-center align-items-center my-2 flex-column">
+                            <img src="img/icon/plus.png" alt="user register pic" width="80"
+                                 height="80" />
+                            <h2 class="text-primary mt-2">Add Book</h2>
+                        </div>
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="my-1">
+                                <label for="name">Name : </label>
+                                <input type="text" name="name" id="name" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="author">Author Name : </label>
+                                <input type="text" name="author" id="author" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="price">Price: </label>
+                                <input type="number" name="price" id="price" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="category">Category : </label>
+                                <select name="category" class="form-control" required="true">
+                                    <option>--Select Category-</option>
+                                </select>
+                            </div>
+                            <div class="my-1">
+                                <label for="status">Status : </label>
+                                <select name="status" class="form-control" required="true">
+                                    <option>--Select Status-</option>
+                                </select>
+                            </div>
+                            <div class="my-1">
+                                <label for="photo">Upload Photo: </label>
+                                <input type="file" name="photo" id="photo" class="form-control" required="true"/>
+                            </div>
+
+                            <div class="my-2 d-flex justify-content-center ">
+                                <button type="submit" class="btn btn-primary me-2">Add</button>
+                                <button type="reset" class="btn btn-danger">reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200;1,300;1,400&display=swap');
+.carousel{
+    height:450px;
+    position: relative;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+.title-design{
+    background:rgba(28, 94, 226,.50);
+}
+
+.carousel-title{
+    z-index:10;
+    top:20px;
+    left:450px;
+    background:rgba(28, 94, 226,.45);
+    padding:10px;
+    border-radius:20px;
+    position: absolute;
+}
+.navbar{
+    z-index: 100;
+    position: sticky;
+    top: 0;
+}

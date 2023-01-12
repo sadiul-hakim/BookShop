@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : callCenter
+    Created on : Jan 12, 2023, 7:17:36 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/User.jsp"/>
+            
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-5 mx-auto">
+                        <div class="card bg-light d-flex flex-column justify-content-center align-items-center p-3">
+                            <img src="img/icon/customer-service.png" alt="call center" width="90" height="90"/>
+                            <h3 class="text-primary">We are ready to help you.</h3>
+                            <p>Call : 456****45567</p>
+                            <p>Mail : bookshop@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

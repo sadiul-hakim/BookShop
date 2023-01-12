@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : userSettings
+    Created on : Jan 12, 2023, 1:04:27 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/TopBar.jsp"/>
+            <jsp:include page="components/navbar/User.jsp"/>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <h3 class="text-light title-design text-center my-4 p-2">Welcome, UserName to Settings.</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="sellOldBook.jspx" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/bookmark.png" width="70" height="70"/>
+                                    <h4>Sell Old Books</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-6 ">
+                                <a href="" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/shield.png" width="70" height="70"/>
+                                    <h4>Login and Security</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+
+                            <div class="col-md-4">
+                                <a href="addAddress.jspx" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/placeholder.png" width="70" height="70"/>
+                                    <h4>Address</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/box.png" width="70" height="70"/>
+                                    <h4>Orders</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="callCenter.jspx" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/customer-service.png" width="70" height="70"/>
+                                    <h4>Help Center</h4>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

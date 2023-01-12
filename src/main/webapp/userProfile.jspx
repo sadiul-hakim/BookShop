@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : userProfile
+    Created on : Jan 12, 2023, 7:33:32 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/User.jsp"/>
+
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-4 mx-auto">
+                        <div class="card bg-light p-3">
+                            <div class="d-flex flex-column justify-content-center align-items-center mb-2">
+                                <img src="img/profile.png" alt="profile pic" width="90" height="90"/>
+                                <h3 class="text-primary my-2">User Name</h3>
+                            </div>
+                            <p class="m-0">Phone : 456****45567</p>
+                            <hr/>
+                            <p class="m-0">Mail  : bookshop@gmail.com</p>
+                            <hr/>
+                            <p class="m-0">Address : kushtia,khulna,Bangladesh</p>
+                            <hr/>
+                            <a class="btn btn-primary btn-lg" href="userEditProfile.jspx">Edit Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

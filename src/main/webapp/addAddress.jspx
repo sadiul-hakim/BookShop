@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : addAddress
+    Created on : Jan 12, 2023, 3:37:38 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/User.jsp"/>
+
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-md-4 mx-auto card p-3 bg-light">
+                        <div class="d-flex justify-content-center align-items-center my-2 flex-column">
+                            <img src="img/icon/placeholder.png" alt="user register pic" width="80"
+                                 height="80" />
+                            <h2 class="text-primary mt-2">Add/Edit Address</h2>
+                        </div>
+                        <form method="post">
+                            <div class="my-1">
+                                <label for="division">Division : </label>
+                                <input type="text" name="division" id="division" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="district">District : </label>
+                                <input type="text" name="district" id="district" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="subdistrict">Sub-District : </label>
+                                <input type="text" name="subdistrict" id="subdistrict" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="union">Union : </label>
+                                <input type="text" name="union" id="union" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="zip">Zip Code : </label>
+                                <input type="number" name="zip" id="zip" class="form-control" required="true"/>
+                            </div>
+                            <div class="my-1">
+                                <label for="address">Address At a Glance : </label>
+                                <input type="text" name="address" class="form-control" id="address" required="true"/>
+                            </div>
+                            
+                            <div class="my-2 d-flex justify-content-center ">
+                                <button type="submit" class="btn btn-primary me-2">Add/Edit</button>
+                                <button type="reset" class="btn btn-danger">reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

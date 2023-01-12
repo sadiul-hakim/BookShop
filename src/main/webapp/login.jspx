@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : login
+    Created on : Jan 11, 2023, 8:18:28 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:include page="components/Head.jsp"/>
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:body>
+            <jsp:include page="components/navbar/Default.jsp"/>
+
+            <div class="row my-4">
+                <div class="col-md-4 mx-auto card p-3 bg-light">
+                    <div
+                        class="d-flex justify-content-center align-items-center my-2 flex-column">
+                        <img src="img/icon/userPic.png" alt="user register pic" width="80"
+                             height="80" />
+                        <h2 class="text-primary mt-2">Login User</h2>
+                    </div>
+                    <form method="post">
+                        <div class="my-1">
+                            <label for="email">Email : </label> <input type="email"
+                                                                       name="email" id="email" class="form-control" required="true"/>
+                        </div>
+                        <div class="my-1">
+                            <label for="password">Password : </label> <input type="password"
+                                                                             name="password" id="password" class="form-control" required="true"/>
+                        </div>
+                        <div class="my-2 d-flex justify-content-center ">
+                            <button type="submit" class="btn btn-primary me-2">Login</button>
+                            <button type="reset" class="btn btn-danger">reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

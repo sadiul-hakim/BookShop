@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : admin
+    Created on : Jan 12, 2023, 2:25:13 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/Admin.jsp"/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <h2 class="text-light title-design text-center my-4 p-2">Welcome, Admin.</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="addBook.jspx" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/plus.png" width="70" height="70"/>
+                                    <h4>Add New Book</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-6 ">
+                                <a href="" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/book.png" width="70" height="70"/>
+                                    <h4>All Books</h4>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+
+                            <div class="col-md-4">
+                                <a href="" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/team.png" width="70" height="70"/>
+                                    <h4>All Users</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/box.png" width="70" height="70"/>
+                                    <h4>All Orders</h4>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="" class="bg-light card p-3 d-flex flex-column justify-content-center align-items-center">
+                                    <img src="img/icon/cargo.png" width="70" height="70"/>
+                                    <h4>All Category</h4>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>
