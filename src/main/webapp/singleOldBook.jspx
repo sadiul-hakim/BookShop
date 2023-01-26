@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : singleOldBook
+    Created on : Jan 16, 2023, 4:13:41 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:useBean id="bookBean" scope="application" class="com.bookShop.bean.BookBean" />
+    <jsp:useBean id="userBean" scope="application" class="com.bookShop.bean.UserBean" />
+    <jsp:setProperty name="bookBean" property="oldBookId" value="${param.id}"/>
+    <jsp:setProperty name="userBean" property="userId" value="${bookBean.singleOldBook.userId}"/>
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/TopBar.jsp"/>
+
+            <c:choose>
+                <c:when test="${user ne null}">
+                    <jsp:include page="components/navbar/User.jsp"/>
+                </c:when>
+                <c:otherwise>
+                    <jsp:include page="components/navbar/Default.jsp"/>
+                </c:otherwise>
+            </c:choose>
+
+            <div class="container mb-3">
+                <div class="bg-light p-2 mt-2">
+                    <div class="row d-flex">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <img src="img/upload/oldBook/${bookBean.singleOldBook.photo}" alt="book pic" width="300" height="350"/>
+                        </div>
+                        <div class="my-2 col-md-8">
+                            <h4 class="text-primary">${bookBean.singleOldBook.name}</h4>
+                            <small>Author : ${bookBean.singleOldBook.author}</small>
+                            <p>Seller : ${bookBean.singleOldBook.userName}</p>
+                            <p>Seller Phone : ${userBean.user.phone}</p>
+                            <p>Seller Mail : ${userBean.user.email}</p>
+                            <p>Price : $ ${bookBean.singleBook.price}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

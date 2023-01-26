@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : allUsersAdmin
+    Created on : Jan 15, 2023, 9:37:41 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:useBean id="userBean" scope="application" class="com.bookShop.bean.UserBean" />
+    <jsp:directive.page import="com.bookShop.entities.user.User"/>
+    <jsp:declaration>
+        User user=null;
+    </jsp:declaration>
+    <jsp:scriptlet>
+        user=(User)session.getAttribute("user");
+        if( user == null){
+            request.getRequestDispatcher("login.jspx").forward(request,response);
+        }else if(!user.getRole().equals("admin")){
+            response.sendRedirect("index.jspx");
+        }
+    </jsp:scriptlet>
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/Admin.jsp"/>
+
+            <div class="container">
+                <h2 class="my-2">All Users</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <td>Id</td>
+                                    <td>Name</td>
+                                    <td>Email</td>
+                                    <td>Role</td>
+                                    <td>Photo</td>
+                                    <td>JoinedAt</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${userBean.allUsers}" var="user">
+                                    <tr>
+                                        <td>${user.id}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.email}</td>
+                                        <td>${user.role}</td>
+                                        <td>${user.photo}</td>
+                                        <td>${user.joinedAt}</td>
+                                        <td>
+                                            <a href=""><i class="fa fa-pencil-square"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href=""><i class="fa fa-trash text-danger"></i></a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

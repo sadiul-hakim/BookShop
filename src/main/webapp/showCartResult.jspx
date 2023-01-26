@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : showCartResult
+    Created on : Jan 16, 2023, 1:12:48 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:useBean id="cartBean" scope="session" class="com.bookShop.bean.CartBean"/>
+    <jsp:setProperty name="cartBean" property="session" value="${pageContext.session}"/>
+    <jsp:scriptlet>
+        if(session.getAttribute("user") == null){
+            request.getRequestDispatcher("login.jspx").forward(request,response);
+        }
+    </jsp:scriptlet>
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/navbar/User.jsp"/>
+
+            <div class="container mt-4">
+                <div class="row">
+                    <h2 class="text-primary my-2">Cart Result</h2>
+                    <!-- Address List -->
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <td>Photo</td>
+                                    <td>Name</td>
+                                    <td>Price</td>
+                                    <td>Quantity</td>
+                                    <td>Total Price</td>
+                                    <td>#</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach items="${cartBean.cart}" var="item">
+                                    <tr>
+                                        <td>
+                                            <img src="img/upload/book/${item.bookPhoto}" alt="cart item" width="40" height="40"/>
+                                        </td>
+                                        <td>
+                                            ${item.bookName}
+                                        </td>
+                                        <td>
+                                            ${item.price}
+                                        </td>
+                                        <td>
+                                            <button class="me-1 btn btn-light text-primary">${item.quantity}</button>
+                                            <a href="IncQuantityServlet?bookId=${item.bookId}" class="me-1 btn btn-dark">+</a>
+                                            <a href="DecQuantityServlet?bookId=${item.bookId}" class="btn btn-danger">-</a>
+                                        </td>
+                                        <td>${item.totalPrice}</td>
+                                        <td>
+                                            <a href="RemoveFromCartServlet?bookId=${item.bookId}"><i class="fa fa-trash text-danger"></i></a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                <tr>
+                                    <td><h5 class="text-primary">Total Price :</h5> </td>
+                                    <td>
+                                        $ ${cartBean.totalPrice}
+                                    </td>
+                                    <td><a class="btn btn-primary">Checkout</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>

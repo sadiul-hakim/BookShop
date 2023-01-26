@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : allOldBooks
+    Created on : Jan 15, 2023, 12:44:21 PM
+    Author     : Hakim
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+    <jsp:directive.page errorPage="error.jsp"/>
+    <jsp:useBean id="bookBean" scope="application" class="com.bookShop.bean.BookBean" />
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:include page="components/Head.jsp"/>
+        <jsp:body>
+            <jsp:include page="components/TopBar.jsp"/>
+
+            <c:choose>
+                <c:when test="${user ne null}">
+                    <jsp:include page="components/navbar/User.jsp"/>
+                </c:when>
+                <c:otherwise>
+                    <jsp:include page="components/navbar/Default.jsp"/>
+                </c:otherwise>
+            </c:choose>
+
+
+            <div class="container mb-3">
+                <div class="bg-light p-2 mt-2">
+                    <h3 class="text-primary my-2"><a href="">Old Books</a></h3>
+                    <div class="row d-flex">
+                        <c:forEach items="${bookBean.allOldBooks}" var="book">
+                            <div class="col-md-3 my-2">
+                                <img src="img/upload/oldBook/${book.photo}" alt="book pic" width="100%" height="300"/>
+                                <h4 class="text-primary">${book.name}</h4>
+                                <small>Author : ${book.author}</small>
+                                <p>Seller : ${book.userName}</p>
+                                <p>Price : $ ${book.price}</p>
+                                <a href="singleOldBook.jspx?id=${book.id}" class="btn btn-dark">See More</a>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+
+        </jsp:body>
+    </jsp:element>
+
+</jsp:root>
